@@ -11,7 +11,7 @@
 
 	.main-body {
 		margin: 0 auto;
-		max-width: 750px;
+		max-width: 700px;
 		width: 90%;
 	}
 	
@@ -41,8 +41,28 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
 		<h1>Picture &amp; srcset</h1>
 		
-		<img src="300.jpg" srcset="300.jpg 300w, 700.jpg 700w, 750.jpg 750w, 1000.jpg 1000w, 1500.jpg 1500w, 2000.jpg 2000w, 3000.jpg 3000w" alt="yah">
+		<h2 id="srcset-nosizes">Src example without sizes</h2>
+		<p>Notice how this goes off the size of the viewport and not the size of our 700px container</p>
+		<img src="300.jpg" 
+			srcset="300.jpg 300w, 700.jpg 700w, 750.jpg 750w, 1000.jpg 1000w, 1500.jpg 1500w, 2000.jpg 2000w, 3000.jpg 3000w"
+			alt="Src example without sizes">
+			
+		<h2 id="srcset-sizes">Src example with sizes</h2>
+		<p>Notice how the browser now understand that the max width we need is 700px.</p>
+		<img src="300.jpg" 
+			srcset="300.jpg 300w, 700.jpg 700w, 750.jpg 750w, 1000.jpg 1000w, 1500.jpg 1500w, 2000.jpg 2000w, 3000.jpg 3000w"
+			sizes="(min-width: 700px) 700px, 100vw"
+			alt="Src example with sizes">
+			
+		<h2 id="srcset-sizes-smaller">Src example with smaller 300px sizes</h2>
+		<p>Notice how it serves smaller image sizes than the one above</p>
+		<img src="300.jpg" 
+			srcset="300.jpg 300w, 700.jpg 700w, 750.jpg 750w, 1000.jpg 1000w, 1500.jpg 1500w, 2000.jpg 2000w, 3000.jpg 3000w"
+			sizes="(min-width: 300px) 300px, 100vw"
+			alt="Src example with smaller 300px sizes">
 		
+		<!--
+<h2 id="srcset-sizes-smaller">Src example with smaller 300px sizes</h2>
 		<picture>
 			<source media="(min-width: 1500px)" srcset="3000.jpg">
 			<source media="(min-width: 1000px)" srcset="1000.jpg">
@@ -50,6 +70,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 		  	<source media="(min-width: 300px)" srcset="300.jpg">
 		  	<img src="300.jpg">
 		</picture>
+-->
 
 		<br><br>
         <a href="http://function.webknit.co.uk/">www.function.webknit.co.uk</a>
