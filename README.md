@@ -1,4 +1,4 @@
 Picture-srcset
 ==============
 
-Playing with Picture &amp; srcset elements
+Playing with Picture & srcset elements for an upcoming blog post.
