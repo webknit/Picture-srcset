@@ -20,6 +20,7 @@
 	}
 	
 	img {
+		float: left;
 		height: auto;
 		max-width: 100%;
 	}
@@ -60,17 +61,26 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 			srcset="300.jpg 300w, 700.jpg 700w, 750.jpg 750w, 1000.jpg 1000w, 1500.jpg 1500w, 2000.jpg 2000w, 3000.jpg 3000w"
 			sizes="(min-width: 300px) 300px, 100vw"
 			alt="Src example with smaller 300px sizes">
+			
+		<h2 id="srcset-sizes-smaller">Src example with smaller 300px sizes</h2>
+		<p>Notice how it serves smaller image sizes than the one above</p>
+		<img src="300.jpg" 
+			srcset="300.jpg 300w, 700.jpg 700w, 750.jpg 750w, 1000.jpg 1000w, 1500.jpg 1500w, 2000.jpg 2000w, 3000.jpg 3000w"
+			sizes="(min-width: 700px) 300px, 100vw"
+			alt="Src example with smaller 300px sizes">
 		
-		<!--
-<h2 id="srcset-sizes-smaller">Src example with smaller 300px sizes</h2>
+
+		<h2 id="srcset-sizes-smaller">Picture example</h2>
+		<p>Resize the browser down to below 700px and the "art direction" will kick in</p>
 		<picture>
-			<source media="(min-width: 1500px)" srcset="3000.jpg">
-			<source media="(min-width: 1000px)" srcset="1000.jpg">
-			<source media="(min-width: 750px)" srcset="750.jpg">
-		  	<source media="(min-width: 300px)" srcset="300.jpg">
-		  	<img src="300.jpg">
-		</picture>
--->
+		
+		  <source media="(min-width: 700px)"
+		  		srcset="700.jpg 1x, 1500.jpg 2x">
+		  <source media="(min-width: 300px)"
+		  		srcset="150.jpg 1x, 300.jpg 2x">
+		  <img src="300.jpg" alt="">
+		  
+		</picture>	
 
 		<br><br>
         <a href="http://function.webknit.co.uk/">www.function.webknit.co.uk</a>
